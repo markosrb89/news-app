@@ -1,0 +1,104 @@
+$nav-links-color: white;
+$nav-active-link-color: #88ff88;
+$header-background-color: black;
+
+header {
+  width: 100%;
+  background-color: $header-background-color;
+  display: flex;
+  justify-content: space-between;
+
+  .header__navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 5%;
+
+    &__menu-links {
+      display: flex;
+      justify-content: space-between;
+      list-style-type: none;
+
+      .active {
+        background-color: $nav-active-link-color;
+        color: $header-background-color;
+      }
+
+      a {
+        border-right: 1px solid #fff;
+        padding: 10px 25px;
+        line-height: 2.2em;
+        position: relative;
+        text-decoration: none;
+        color: $nav-links-color;
+        font-size: 20px;
+      }
+
+      a:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 12px auto;
+        width: 0%;
+        content: '.';
+        color: transparent;
+        background: $nav-active-link-color;
+        height: 1px;
+      }
+
+      a:hover:after {
+        width: 80%;
+        transition: all 0.4s;
+      }
+    }
+  }
+
+  .header__country-selection {
+    display: flex;
+    align-items: center;
+    color: white;
+
+    .active {
+      background-color: $nav-active-link-color;
+      color: $header-background-color;
+    }
+
+    &__option {
+      border-right: 1px solid #fff;
+      padding: 10px 25px;
+      line-height: 2.2em;
+      position: relative;
+      text-decoration: none;
+      color: $nav-links-color;
+      font-size: 20px;
+      list-style-type: none;
+      cursor: pointer;
+    }
+
+    &__option:nth-child(2) {
+      border: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  header {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-content: center;
+    justify-content: center;
+    height: 4rem;
+
+    .header__navigation {
+      margin-right: 0px;
+
+      &__menu-links {
+
+        a:nth-child(3) {
+          border: none;
+        }
+      }
+    }
+  }
+}
