@@ -1,4 +1,4 @@
-# News Application 🎁
+# News Application
 Shows news for the specific country (GB and USA).
 
 ## UI mock
